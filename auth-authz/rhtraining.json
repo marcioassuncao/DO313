@@ -1,0 +1,135 @@
+{
+    "realm": "rhtraining",
+    "enabled": true,
+    "accessTokenLifespan": 60,
+    "accessCodeLifespan": 60,
+    "accessCodeLifespanUserAction": 300,
+    "ssoSessionIdleTimeout": 600,
+    "ssoSessionMaxLifespan": 36000,
+    "sslRequired": "external",
+    "registrationAllowed": false,
+    "privateKey": "MIICXAIBAAKBgQCrVrCuTtArbgaZzL1hvh0xtL5mc7o0NqPVnYXkLvgcwiC3BjLGw1tGEGoJaXDuSaRllobm53JBhjx33UNv+5z/UMG4kytBWxheNVKnL6GgqlNabMaFfPLPCF8kAgKnsi79NMo+n6KnSY8YeUmec/p2vjO2NjsSAVcWEQMVhJ31LwIDAQABAoGAfmO8gVhyBxdqlxmIuglbz8bcjQbhXJLR2EoS8ngTXmN1bo2L90M0mUKSdc7qF10LgETBzqL8jYlQIbt+e6TH8fcEpKCjUlyq0Mf/vVbfZSNaVycY13nTzo27iPyWQHK5NLuJzn1xvxxrUeXI6A2WFpGEBLbHjwpx5WQG9A+2scECQQDvdn9NE75HPTVPxBqsEd2z10TKkl9CZxu10Qby3iQQmWLEJ9LNmy3acvKrE3gMiYNWb6xHPKiIqOR1as7L24aTAkEAtyvQOlCvr5kAjVqrEKXalj0Tzewjweuxc0pskvArTI2Oo070h65GpoIKLc9jf+UA69cRtquwP93aZKtW06U8dQJAF2Y44ks/mK5+eyDqik3koCI08qaC8HYq2wVl7G2QkJ6sbAaILtcvD92ToOvyGyeE0flvmDZxMYlvaZnaQ0lcSQJBAKZU6umJi3/xeEbkJqMfeLclD27XGEFoPeNrmdx0q10Azp4NfJAY+Z8KRyQCR2BEG+oNitBOZ+YXF9KCpH3cdmECQHEigJhYg+ykOvr1aiZUMFT72HU0jnmQe2FVekuG+LJUt2Tm7GtMjTFoGpf0JwrVuZN39fOYAlo+nTixgeW7X8Y=",
+    "publicKey": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrVrCuTtArbgaZzL1hvh0xtL5mc7o0NqPVnYXkLvgcwiC3BjLGw1tGEGoJaXDuSaRllobm53JBhjx33UNv+5z/UMG4kytBWxheNVKnL6GgqlNabMaFfPLPCF8kAgKnsi79NMo+n6KnSY8YeUmec/p2vjO2NjsSAVcWEQMVhJ31LwIDAQAB",
+    "requiredCredentials": [
+        "password"
+    ],
+    "groups": [
+        {
+            "id": "cbe8b727-8490-4d75-8e7a-63bc3aaee73f",
+            "name": "finance-users",
+            "path": "/finance-users",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+        },
+        {
+            "id": "d7843698-8bdd-4631-8c03-246138610a73",
+            "name": "managers",
+            "path": "/managers",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+        },
+        {
+            "id": "64b34fc3-1167-4489-b426-96e8f5712034",
+            "name": "marketing-users",
+            "path": "/marketing-users",
+            "attributes": {},
+            "realmRoles": [],
+            "clientRoles": {},
+            "subGroups": []
+        }
+    ],
+    "users": [
+        {
+            "username": "alice",
+            "enabled": true,
+            "email": "alice@keycloak.org",
+            "firstName": "Alice",
+            "lastName": "Liddel",
+            "credentials": [
+                {
+                    "type": "password",
+                    "value": "alice"
+                }
+            ]
+        },
+        {
+            "username": "bob",
+            "enabled": true,
+            "email": "bob@keycloak.org",
+            "firstName": "Bob",
+            "lastName": "Liddel",
+            "credentials": [
+                {
+                    "type": "password",
+                    "value": "bob"
+                }
+            ]
+        },
+        {
+            "username": "johndoe",
+            "enabled": true,
+            "email": "johndoe@keycloak.org",
+            "firstName": "John",
+            "lastName": "Doe",
+            "credentials": [
+                {
+                    "type": "password",
+                    "value": "johndoe"
+                }
+            ]
+        }
+    ],
+    "clients": [
+        {
+            "clientId": "finance-webapp",
+            "rootUrl": "http://localhost:8080/finance",
+            "adminUrl": "http://localhost:8080/finance",
+            "enabled": true,
+            "clientAuthenticatorType": "client-secret",
+            "secret": "passw0rd",
+            "redirectUris": [
+                "http://localhost:8080/finance/*"
+            ],
+            "webOrigins": [
+                "http://localhost:8080"
+            ],
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": false,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect"
+        },
+        {
+            "clientId": "marketing-restful-api",
+            "rootUrl": "http://localhost:3000/campaign",
+            "adminUrl": "http://localhost:3000/campaign",
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "secret": "passw0rd",
+            "redirectUris": [
+                "http://localhost:3000/campaign/*"
+            ],
+            "webOrigins": [
+                "http://localhost:3000"
+            ],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": true,
+            "publicClient": false,
+            "protocol": "openid-connect"
+        }
+    ]
+}
